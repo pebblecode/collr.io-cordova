@@ -1,12 +1,13 @@
 # Collr.io
 
-## First time
+## Run on device
 
-`cd src && npm install`
-
-## Start
+From top level directory:
 
 `npm run device`
 
-web:
-`npm start`
+## Run in web browser
+
+From top level directory:
+
+`cd src && npm install && npm start`
