@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		04CDD6230BE04E9482618A62 /* BLECentralPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F603B2F02E3E4D32ADE5CC9C /* BLECentralPlugin.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -44,6 +43,7 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		9DCFD87C8FAE41B0BE867909 /* BLECommandContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B15FE85ECC4B8FBE678414 /* BLECommandContext.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		59BA2385745F4EAEB0037A45 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C13E255A2EE4181BBD6AFBD /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +114,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F603B2F02E3E4D32ADE5CC9C /* BLECentralPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLECentralPlugin.m; path = "cordova-plugin-ble-central/BLECentralPlugin/BLECentralPlugin.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloCordova/config.xml; sourceTree = "<group>"; };
+		0C13E255A2EE4181BBD6AFBD /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		A2844BCE5DAD4A4C960E28F7 /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,8 @@
 				2CAEDF5A08AC47F3BAAD4211 /* BLECentralPlugin.h */,
 				964CF28F7949404489A1F5C2 /* CBPeripheral+Extensions.h */,
 				1D6A7099913B49F0BB594B32 /* BLECommandContext.h */,
+				0C13E255A2EE4181BBD6AFBD /* CDVLogger.m */,
+				A2844BCE5DAD4A4C960E28F7 /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = HelloCordova/Plugins;
@@ -304,7 +308,7 @@
 				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 7NSVQ626R3;
+						DevelopmentTeam = X43HYB52AY;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 				04CDD6230BE04E9482618A62 /* BLECentralPlugin.m in Sources */,
 				1E3CB31DEA9F4845A9FAE62F /* CBPeripheral+Extensions.m in Sources */,
 				9DCFD87C8FAE41B0BE867909 /* BLECommandContext.m in Sources */,
+				59BA2385745F4EAEB0037A45 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

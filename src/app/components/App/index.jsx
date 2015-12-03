@@ -1,4 +1,5 @@
 /* @flow */
+/* global ble */
 
 import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
@@ -9,8 +10,23 @@ import {fetchStatusesOnInterval} from '../../actions';
 class App extends Component {
 
   componentDidMount() {
+
+    console.log('XXX Component did mount');
+
     const { dispatch } = this.props;
     dispatch(fetchStatusesOnInterval);
+
+    let success = (data) => {
+      console.log('XXX CONNECT SUCCESS! YES!', data);
+    };
+
+    let failure = (error) => {
+      console.log('XXX CONNECT fail :(', error);
+    };
+
+    // TESTING BLUETOOTH CONNECTION
+    ble.connect(0xDE4ECAE96879, success, failure);
+
   }
 
   // RENDER
