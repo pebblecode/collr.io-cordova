@@ -1,4 +1,10 @@
-#Start
+# Collr.io
+
+## First time
+
+`npm install`
+
+## Start
 
 `npm run device`
 
