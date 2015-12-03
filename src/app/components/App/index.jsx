@@ -53,6 +53,7 @@ class App extends Component {
         <div className={'collr-wrapper'}>
             <header>
                 <img src={'img/logo.svg'} alt="Collr-io Logo" />
+                <p>The most fabulous dogs in the world</p>
             </header>
             <div>
                 <img src={'img/profile.png'} alt="pet-profile"/>
