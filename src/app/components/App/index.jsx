@@ -40,9 +40,17 @@ class App extends Component {
   render() {
     return (
       <div className={'page__home'}>
-        <ul className={'grid'}>
-          {this._renderStatuses()}
-        </ul>
+        <div className={'collr-wrapper'}>
+            <header>
+                <img src={'img/logo.svg'} alt="Collr-io Logo" />
+            </header>
+            <div>
+                <img src={'img/profile.png'} alt="pet-profile"/>
+                <h3>WINSTON</h3>
+            </div>
+            <button>Colour</button>
+            <button>Animation</button>
+        </div>
       </div>
     );
   }
