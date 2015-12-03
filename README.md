@@ -2,11 +2,11 @@
 
 ## First time
 
-`npm install`
+`cd src && npm install`
 
 ## Start
 
 `npm run device`
 
 web:
-`cd src && npm install && npm start`
+`npm start`
