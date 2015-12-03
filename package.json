@@ -1,0 +1,12 @@
+{
+  "name": "collr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "device": "cd src/ && npm run build && cd ../ && cordova run ios --device"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
