@@ -17,6 +17,9 @@
     <feature name="BLE">
         <param name="ios-package" onload="true" value="BLECentralPlugin" />
     </feature>
+    <feature name="BluetoothSerial">
+        <param name="ios-package" onload="true" value="MEGBluetoothSerial" />
+    </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <name>HelloCordova</name>

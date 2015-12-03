@@ -7,6 +7,14 @@ module.exports = [
         "clobbers": [
             "ble"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-bluetooth-serial/www/bluetoothSerial.js",
+        "id": "cordova-plugin-bluetooth-serial.bluetoothSerial",
+        "pluginId": "cordova-plugin-bluetooth-serial",
+        "clobbers": [
+            "window.bluetoothSerial"
+        ]
     }
 ];
 module.exports.metadata = 

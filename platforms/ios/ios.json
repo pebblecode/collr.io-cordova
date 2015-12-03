@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"BLE\"><param name=\"ios-package\" onload=\"true\" value=\"BLECentralPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BluetoothSerial\"><param name=\"ios-package\" onload=\"true\" value=\"MEGBluetoothSerial\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -23,6 +27,9 @@
         },
         "cordova-plugin-ble-central": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-bluetooth-serial": {
+            "PACKAGE_NAME": "es.mikejam.collr.cordova"
         }
     },
     "dependent_plugins": {},
@@ -33,6 +40,14 @@
             "pluginId": "cordova-plugin-ble-central",
             "clobbers": [
                 "ble"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-bluetooth-serial/www/bluetoothSerial.js",
+            "id": "cordova-plugin-bluetooth-serial.bluetoothSerial",
+            "pluginId": "cordova-plugin-bluetooth-serial",
+            "clobbers": [
+                "window.bluetoothSerial"
             ]
         }
     ]

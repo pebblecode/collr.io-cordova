@@ -8,29 +8,118 @@ import {fetchStatusesOnInterval} from '../../actions';
 
 class App extends Component {
 
+  componentWillMount(){
+    document.addEventListener("deviceready", this.eventHandlers.bind(this), false);
+  }
+
+  eventHandlers(){
+    window.ble.scan([],5,this.search.bind(this), this.error.bind(this));
+  }
+
+  constructor(props){
+    super(props);
+    this.state = {connected:false, sent:false, type:''};
+  }
+
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchStatusesOnInterval);
   }
 
-  // RENDER
-  _renderStatuses() {
+  search(d){
+    console.log('-----')
+    console.log(d.name);
+    console.log(d.id);
+    console.log('-----')
+    if(d.name === 'Adafruit Bluefruit LE'){
+      this.connect(d);
+    }
+  }
 
-    return this.props.users.map((status) => {
-      return <Status {...status} key={status.email} />;
-    });
+  connect(d){
+    var _this = this;
+    bluetoothSerial.connect(d.id, (res) => {
+      _this.setState({connected:true});
+    }, this.error);
+  }
+
+  error(e){
+    console.log('error', e);
   }
 
   render() {
     return (
-      <div className={'page__home'}>
-        <ul className={'grid'}>
-          {this._renderStatuses()}
-        </ul>
-      </div>
+      <div> 
+        <h1>CONNECTED: {this.state.connected === true ? 'YES' : 'NO'}</h1>
+        <button onClick={this.eventHandlers.bind(this)}>CONNECT</button>
+        <h1>SENT: {this.state.sent === true ? 'YES' : 'NO'}</h1>
+        <h2>TYPE: {this.state.type}</h2>
+        <button onClick={this.unionjack.bind(this)}>Union Jack</button>
+        <button onClick={this.animate2.bind(this)}>Animate 2</button>
+        <button onClick={this.animate3.bind(this)}>Animate 3</button>
+        <button onClick={this.blue.bind(this)}>BLUE</button>
+
+       </div>
     );
   }
-}
+  unionjack(){
+      var _this = this;
+      var data = new Uint8Array(5);
+      data[0] = 0x21; // !
+      data[1] = 0x42; // C
+      data[2] = 0x31; // // upto 34
+      data[3] = 0x30; // 5
+      data[4] = 0x3B; // 5
+
+      bluetoothSerial.write(data, (res) => {
+        _this.setState({sent: true, type:'unionjack'});
+      }, this.error);
+  }
+
+  animate2(){
+      var _this = this;
+      var data = new Uint8Array(5);
+      data[0] = 0x21; // !
+      data[1] = 0x42; // C
+      data[2] = 0x32; // // upto 34
+      data[3] = 0x30; // 5
+      data[4] = 0x3C; // 5
+
+      bluetoothSerial.write(data, (res) => {
+        _this.setState({sent: true, type:'animate2'});
+      }, this.error);
+  }
+
+  animate3(){
+      var _this = this;
+      var data = new Uint8Array(5);
+      data[0] = 0x21; // !
+      data[1] = 0x42; // C
+      data[2] = 0x33; // // upto 34
+      data[3] = 0x30; // 5
+      data[4] = 0x3D; // 5
+
+      bluetoothSerial.write(data, (res) => {
+        _this.setState({sent: true, type:'animate3'});
+      }, this.error);
+  }
+
+
+  blue(){
+      var _this = this;
+      var data = new Uint8Array(6);
+      data[0] = 0x21; // !
+      data[1] = 0x43; // C
+      data[2] = 0x67; // 5
+      data[3] = 0x3B; // 5
+      data[4] = 0xFF; // 5
+      data[5] = 0xFA;
+
+      bluetoothSerial.write(data, (res) => {
+        _this.setState({sent: true, type:'BLUE'});
+      }, this.error);
+  }
+};
 
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,

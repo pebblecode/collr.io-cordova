@@ -12,6 +12,9 @@
         },
         "cordova-plugin-ble-central": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-bluetooth-serial": {
+            "PACKAGE_NAME": "es.mikejam.collr.cordova"
         }
     },
     "dependent_plugins": {}
