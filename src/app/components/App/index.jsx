@@ -4,12 +4,15 @@
 import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
 import Status from '../Status';
-
 import logoImg from '../../img/logo.svg';
 import profileImg from '../../img/profile.png';
 
 import {fetchStatusesOnInterval} from '../../actions';
 
+// var bluetoothSerial = window.bluetoothSerialSerial || {connect:function(){}, write:function(){}};
+
+const bark = new Audio('audio/bark.mp3');
+const jingle = new Audio('audio/jingle.mp3');
 class App extends Component {
 
   componentWillMount(){
@@ -83,6 +86,8 @@ class App extends Component {
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'unionjack'});
       }, this.error);
+
+      bark.play();
   }
 
   animate2(){
@@ -97,6 +102,8 @@ class App extends Component {
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'animate2'});
       }, this.error);
+
+      bark.play();
   }
 
   animate3(){
@@ -111,6 +118,7 @@ class App extends Component {
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'animate3'});
       }, this.error);
+      bark.play();
   }
 
   animate4(){
@@ -125,6 +133,8 @@ class App extends Component {
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'animate3'});
       }, this.error);
+
+      jingle.play();
   }
 
 
@@ -141,6 +151,8 @@ class App extends Component {
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'BLUE'});
       }, this.error);
+      bark.play();
+
   }
 };
 
