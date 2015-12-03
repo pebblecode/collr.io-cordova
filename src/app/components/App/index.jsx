@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
 import Status from '../Status';
 
+import logoImg from '../../img/logo.svg';
+import profileImg from '../../img/profile.png';
+
 import {fetchStatusesOnInterval} from '../../actions';
 
 class App extends Component {
