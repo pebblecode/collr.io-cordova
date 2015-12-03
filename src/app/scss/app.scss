@@ -39,13 +39,13 @@ ul {
 
 html,
 body {
-  background-color: $paper;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient( #93EDE9, #5499DF);
   color: $ink;
   font-family: sans-serif;
   line-height: 1.4;
   width: 100%;
   height: 100%;
-  background-image: url("../img/illi-tile-v2-white.png");
 }
 
 //===============================================================================
@@ -203,4 +203,60 @@ $columns: 7;
 
 .status {
   font-size: 1.75vh;
+}
+
+
+
+
+
+
+
+
+
+.collr-wrapper {
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+header {
+    padding: 30px;
+}
+
+button {
+    height: 70px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border: 0;
+    margin: 10px 0;
+}
+
+
+.animation-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.animation-list li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.animation-list li:hover {
+    background-color: rgba(78, 121, 127, 0.2);
 }

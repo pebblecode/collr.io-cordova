@@ -17,13 +17,32 @@ class App extends Component {
   }
 
   eventHandlers(){
-    if(!this.state.connected)
-      window.ble.scan([],5,this.search.bind(this), this.error.bind(this));
+    window.ble.scan([],5,this.search.bind(this), this.error.bind(this));
   }
 
   constructor(props){
     super(props);
     this.state = {connected:false, sent:false, type:''};
+  }
+
+  componentDidMount() {
+
+    console.log('XXX Component did mount');
+
+    const { dispatch } = this.props;
+    dispatch(fetchStatusesOnInterval);
+
+    let success = (data) => {
+      console.log('XXX CONNECT SUCCESS! YES!', data);
+    };
+
+    let failure = (error) => {
+      console.log('XXX CONNECT fail :(', error);
+    };
+
+    // TESTING BLUETOOTH CONNECTION
+    ble.connect(0xDE4ECAE96879, success, failure);
+
   }
 
   search(d){
@@ -49,7 +68,20 @@ class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div> 
+        <h1>CONNECTED: {this.state.connected === true ? 'YES' : 'NO'}</h1>
+        <button onClick={this.eventHandlers.bind(this)}>CONNECT</button>
+        <h1>SENT: {this.state.sent === true ? 'YES' : 'NO'}</h1>
+        <h2>TYPE: {this.state.type}</h2>
+        <button onClick={this.unionjack.bind(this)}>Union Jack</button>
+        <button onClick={this.animate2.bind(this)}>Animate 2</button>
+        <button onClick={this.animate3.bind(this)}>Animate 3</button>
+        <button onClick={this.blue.bind(this)}>BLUE</button>
+
+       </div>
+=======
+      <div className={'page__home'}>
         <div className={'collr-wrapper'}>
             <header>
                 <img src={'img/logo.svg'} alt="Collr-io Logo" />
@@ -57,17 +89,12 @@ class App extends Component {
             <div>
                 <img src={'img/profile.png'} alt="pet-profile"/>
                 <h3>WINSTON</h3>
-                <h4> {this.state.type} </h4>
-                <h4> Connected: {this.state.connected === true ? 'YES' : 'NO'}</h4> 
             </div>
-            <button onClick={this.eventHandlers.bind(this)}>Connect</button>
-            <button onClick={this.blue.bind(this)}>BLUE</button>
-            <button onClick={this.unionjack.bind(this)}>UNION FLAG</button>
-            <button onClick={this.animate2.bind(this)}>Animation 2</button>
-            <button onClick={this.animate3.bind(this)}>Animation 3</button>
-            <button onClick={this.animate4.bind(this)}>Jingle Bells</button>
+            <button>Colour</button>
+            <button>Animation</button>
         </div>
-       </div>
+      </div>
+>>>>>>> 8412dff9d8890c1b711cc764de5407b44171c6ec
     );
   }
   unionjack(){
@@ -91,7 +118,7 @@ class App extends Component {
       data[1] = 0x42; // C
       data[2] = 0x32; // // upto 34
       data[3] = 0x30; // 5
-      data[4] = 0x3A; // 5
+      data[4] = 0x3C; // 5
 
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'animate2'});
@@ -105,21 +132,7 @@ class App extends Component {
       data[1] = 0x42; // C
       data[2] = 0x33; // // upto 34
       data[3] = 0x30; // 5
-      data[4] = 0x39; // 5
-//0x21 0x42 0x33 0x30 0x39
-      bluetoothSerial.write(data, (res) => {
-        _this.setState({sent: true, type:'animate3'});
-      }, this.error);
-  }
-
-  animate4(){
-      var _this = this;
-      var data = new Uint8Array(5);
-      data[0] = 0x21; // !
-      data[1] = 0x42; // C
-      data[2] = 0x34; // // upto 34
-      data[3] = 0x30; // 5
-      data[4] = 0x38; // 5
+      data[4] = 0x3D; // 5
 
       bluetoothSerial.write(data, (res) => {
         _this.setState({sent: true, type:'animate3'});
