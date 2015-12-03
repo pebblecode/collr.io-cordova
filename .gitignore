@@ -1,10 +1,8 @@
 www
 node_modules
+
 logs
 *.log
-
-release-signing.properties
-
 
 # Rest of file based on: https://raw.githubusercontent.com/crilleengvall/gitignore/master/Phonegap.gitignore
 
