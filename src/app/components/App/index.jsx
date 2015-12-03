@@ -67,8 +67,8 @@ class App extends Component {
             <button onClick={this.eventHandlers.bind(this)}>Connect</button>
             <button onClick={this.blue.bind(this)}>BLUE</button>
             <button onClick={this.unionjack.bind(this)}>UNION FLAG</button>
-            <button onClick={this.animate2.bind(this)}>Animation 2</button>
-            <button onClick={this.animate3.bind(this)}>Animation 3</button>
+            <button onClick={this.animate2.bind(this)}>PARY TIME</button>
+            <button onClick={this.animate3.bind(this)}>PARTY</button>
             <button onClick={this.animate4.bind(this)}>Jingle Bells</button>
         </div>
        </div>
@@ -100,7 +100,7 @@ class App extends Component {
       data[4] = 0x3A; // 5
 
       bluetoothSerial.write(data, (res) => {
-        _this.setState({sent: true, type:'animate2'});
+        _this.setState({sent: true, type:'PARTY TIME'});
       }, this.error);
 
       bark.play();
@@ -116,7 +116,7 @@ class App extends Component {
       data[4] = 0x39; // 5
 //0x21 0x42 0x33 0x30 0x39
       bluetoothSerial.write(data, (res) => {
-        _this.setState({sent: true, type:'animate3'});
+        _this.setState({sent: true, type:'PARTY'});
       }, this.error);
       bark.play();
   }
@@ -131,7 +131,7 @@ class App extends Component {
       data[4] = 0x38; // 5
 
       bluetoothSerial.write(data, (res) => {
-        _this.setState({sent: true, type:'animate3'});
+        _this.setState({sent: true, type:'JINGLE BELLS'});
       }, this.error);
 
       jingle.play();
